@@ -43,6 +43,10 @@ M.on_attach = function(client, bufnr)
 
   if client.name == "sumneko_lua" then
     client.server_capabilities.document_formatting = false
+    -- Since Treesitter and this don't play well together, disable
+    -- semanticTokensProvider
+    -- TODO: Find a way to make this work later
+    -- https://github.com/neovim/neovim/pull/21100
     client.server_capabilities.semanticTokensProvider = nil
   end
 
