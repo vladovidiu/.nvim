@@ -43,6 +43,7 @@ M.on_attach = function(client, bufnr)
 
   if client.name == "sumneko_lua" then
     client.server_capabilities.document_formatting = false
+    client.server_capabilities.semanticTokensProvider = nil
   end
 
   map("n", "gd", vim.lsp.buf.definition, opts)
