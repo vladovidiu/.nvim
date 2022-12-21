@@ -3,12 +3,14 @@ import("nvim-treesitter.configs", function(treesitter)
     ensure_installed = {
       "lua",
       "help",
+      "rust",
     },
     autopairs = {
       enable = true,
     },
     highlight = {
       enable = true,
+      additional_vim_regex_highlighting = true,
     },
     indent = {
       enable = true,

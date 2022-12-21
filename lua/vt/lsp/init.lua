@@ -33,7 +33,6 @@ import({ "mason", "mason-lspconfig", "lspconfig" }, function(modules)
       local server_opts = lsp_opts
 
       if has_custom_opts then
-        print(server_name)
         server_opts = vim.tbl_deep_extend("force", custom_opts, lsp_opts)
       end
 
