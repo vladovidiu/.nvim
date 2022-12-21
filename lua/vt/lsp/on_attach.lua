@@ -7,7 +7,7 @@ M.setup = function()
     underline = true,
     severity_sort = true,
     float = {
-      focusable = false,
+      focusable = true,
       style = "minimal",
       border = "rounded",
       source = "always",
@@ -31,6 +31,16 @@ M.on_attach = function(client, bufnr)
   local opts = { noremap = true, silent = true }
   local map = vim.keymap.set
 
+  local augroup = vim.api.nvim_create_augroup("DiagnosticFloat", { clear = true })
+  vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+  vim.api.nvim_create_autocmd("CursorHold", {
+    group = augroup,
+    buffer = bufnr,
+    callback = function()
+      vim.diagnostic.open_float { focusable = false, border = "rounded" }
+    end,
+  })
+
   if client.name == "sumneko_lua" then
     client.server_capabilities.document_formatting = false
   end
@@ -38,5 +48,9 @@ M.on_attach = function(client, bufnr)
   map("n", "gd", vim.lsp.buf.definition, opts)
   map("n", "K", vim.lsp.buf.hover)
 end
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+M.capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 return M

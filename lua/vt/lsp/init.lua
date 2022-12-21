@@ -1,10 +1,12 @@
-import({ "mason", "mason-lspconfig", "lspconfig", "cmp_nvim_lsp" }, function(modules)
+require("vt.lsp.on_attach").setup()
+
+import({ "mason", "mason-lspconfig", "lspconfig" }, function(modules)
   local mason = modules.mason
   local masonLspConfig = modules["mason-lspconfig"]
-  local cmpLsp = modules["cmp_nvim_lsp"]
 
   local lsp_servers = {
     "sumneko_lua",
+    "rust_analyzer",
   }
 
   mason.setup {
@@ -13,10 +15,8 @@ import({ "mason", "mason-lspconfig", "lspconfig", "cmp_nvim_lsp" }, function(mod
     },
   }
 
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-
   local lsp_opts = {
-    capabilities = cmpLsp.default_capabilities(capabilities),
+    capabilities = require("vt.lsp.on_attach").capabilities,
     on_attach = require("vt.lsp.on_attach").on_attach,
     flags = {
       debounce_text_changes = 150,
@@ -33,10 +33,17 @@ import({ "mason", "mason-lspconfig", "lspconfig", "cmp_nvim_lsp" }, function(mod
       local server_opts = lsp_opts
 
       if has_custom_opts then
+        print(server_name)
         server_opts = vim.tbl_deep_extend("force", custom_opts, lsp_opts)
       end
 
       modules.lspconfig[server_name].setup(server_opts)
+    end,
+    ["rust_analyzer"] = function()
+      import("rust-tools", function(rust_tools)
+        local rust_opts = require "vt.lsp.settings.rust"
+        rust_tools.setup(rust_opts)
+      end)
     end,
   }
 

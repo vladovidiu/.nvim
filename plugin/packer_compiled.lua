@@ -184,6 +184,11 @@ _G.packer_plugins = {
     path = "/Users/vt/.local/share/nvim/site/pack/packer/start/neogit",
     url = "https://github.com/TimUntersberger/neogit"
   },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/vt/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/vt/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -247,6 +252,16 @@ _G.packer_plugins = {
     path = "/Users/vt/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "/Users/vt/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/Users/vt/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
+  },
   ["symbols-outline.nvim"] = {
     loaded = true,
     path = "/Users/vt/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
@@ -265,6 +280,11 @@ _G.packer_plugins = {
     path = "/Users/vt/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/Users/vt/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
   ["vim-sleuth"] = {
     loaded = true,
     path = "/Users/vt/.local/share/nvim/site/pack/packer/start/vim-sleuth",
@@ -280,10 +300,10 @@ time([[Conditional loading of telescope-fzf-native.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd playground ]]
+vim.cmd [[ packadd nvim-autopairs ]]
 vim.cmd [[ packadd nvim-ts-rainbow ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
-vim.cmd [[ packadd nvim-autopairs ]]
-vim.cmd [[ packadd playground ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false

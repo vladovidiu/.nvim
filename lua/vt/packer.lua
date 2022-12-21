@@ -32,10 +32,13 @@ return packer.startup(function(use)
   -- Core
   use "wbthomason/packer.nvim"
   use "nvim-lua/plenary.nvim"
+  use "nvim-lua/popup.nvim"
   use "miversen33/import.nvim"
+  use "MunifTanjim/nui.nvim"
 
   -- UI
   use "ellisonleao/gruvbox.nvim"
+  use "folke/tokyonight.nvim"
   use "kyazdani42/nvim-web-devicons"
 
   -- Treesitter
@@ -98,4 +101,7 @@ return packer.startup(function(use)
   -- Git
   use "TimUntersberger/neogit"
   use "lewis6991/gitsigns.nvim"
+
+  -- Programming Language
+  use "simrat39/rust-tools.nvim"
 end)
