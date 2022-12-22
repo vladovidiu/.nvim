@@ -51,6 +51,7 @@ M.on_attach = function(client, bufnr)
   end
 
   map("n", "gd", vim.lsp.buf.definition, opts)
+  map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
   map("n", "K", vim.lsp.buf.hover)
 end
 

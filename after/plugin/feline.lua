@@ -173,7 +173,7 @@ import("feline", function(feline)
   --[[ } ]]
 
   -- diagnosticErrors
-  components.active[2][5] = {
+  components.active[2][1] = {
     provider = "diagnostic_errors",
     enabled = function()
       return lsp.diagnostics_exist(vim.diagnostic.severity.ERROR)
@@ -185,7 +185,7 @@ import("feline", function(feline)
   }
 
   -- diagnosticWarn
-  components.active[2][6] = {
+  components.active[2][2] = {
     provider = "diagnostic_warnings",
     enabled = function()
       return lsp.diagnostics_exist(vim.diagnostic.severity.WARN)
@@ -197,7 +197,7 @@ import("feline", function(feline)
   }
 
   -- diagnosticHint
-  components.active[2][7] = {
+  components.active[2][3] = {
     provider = "diagnostic_hints",
     enabled = function()
       return lsp.diagnostics_exist(vim.diagnostic.severity.HINT)
@@ -209,7 +209,7 @@ import("feline", function(feline)
   }
 
   -- diagnosticInfo
-  components.active[2][8] = {
+  components.active[2][4] = {
     provider = "diagnostic_info",
     enabled = function()
       return lsp.diagnostics_exist(vim.diagnostic.severity.INFO)
