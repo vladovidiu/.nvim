@@ -40,6 +40,7 @@ return packer.startup(function(use)
   use "ellisonleao/gruvbox.nvim"
   use "folke/tokyonight.nvim"
   use "kyazdani42/nvim-web-devicons"
+  use "feline-nvim/feline.nvim"
 
   -- Treesitter
   use {
@@ -68,6 +69,8 @@ return packer.startup(function(use)
   -- Editing
   use "max397574/better-escape.nvim"
   use "tpope/vim-sleuth"
+  use "numToStr/Comment.nvim"
+  use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
