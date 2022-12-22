@@ -6,6 +6,7 @@ import({ "mason-null-ls", "null-ls", "mason-null-ls.automatic_setup" }, function
   local formatServers = {
     "stylua",
     "prettierd",
+    "rustfmt",
   }
 
   mason_null_ls.setup {

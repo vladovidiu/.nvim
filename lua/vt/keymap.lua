@@ -9,4 +9,5 @@ map({ "n", "v" }, "<Space>", "<Nop>", opts)
 map("n", "<leader>pv", vim.cmd.Ex, opts)
 
 -- Misc
-map("n", "<ESC>", ":noh<CR>", opts)
+map("n", "<ESC>", ":noh<CR>", opts) -- clear search results
+map("n", "<leader>ps", "<cmd>PackerSync<CR>", opts) -- update packer plugins
