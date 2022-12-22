@@ -27,6 +27,25 @@ M.setup = function()
   })
 end
 
+local SERVERS = {
+  "sumneko_lua",
+  "tsserver",
+}
+
+local disable_formatting = function(client)
+  client.server_capabilities.document_formatting = false
+end
+
+local lookup_value = function(client, table)
+  for _, val in pairs(table) do
+    if client == val then
+      return true
+    end
+  end
+
+  return false
+end
+
 M.on_attach = function(client, bufnr)
   local opts = { noremap = true, silent = true }
   local map = vim.keymap.set
@@ -42,12 +61,15 @@ M.on_attach = function(client, bufnr)
   })
 
   if client.name == "sumneko_lua" then
-    client.server_capabilities.document_formatting = false
     -- Since Treesitter and this don't play well together, disable
     -- semanticTokensProvider
     -- TODO: Find a way to make this work later
     -- https://github.com/neovim/neovim/pull/21100
     client.server_capabilities.semanticTokensProvider = nil
+  end
+
+  if lookup_value(client.name, SERVERS) then
+    disable_formatting(client)
   end
 
   map("n", "gd", vim.lsp.buf.definition, opts)
