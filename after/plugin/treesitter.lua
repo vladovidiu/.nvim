@@ -4,6 +4,9 @@ import("nvim-treesitter.configs", function(treesitter)
       "lua",
       "help",
       "rust",
+      "javascript",
+      "typescript",
+      "json",
     },
     autopairs = {
       enable = true,
