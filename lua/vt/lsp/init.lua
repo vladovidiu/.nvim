@@ -7,6 +7,8 @@ import({ "mason", "mason-lspconfig", "lspconfig" }, function(modules)
   local lsp_servers = {
     "sumneko_lua",
     "rust_analyzer",
+    "tsserver",
+    "jsonls",
   }
 
   mason.setup {
