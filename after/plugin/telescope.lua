@@ -14,7 +14,7 @@ import({ "telescope", "telescope.actions", "telescope.builtin" }, function(modul
       },
     },
     defaults = {
-      file_ignore_patterns = { "node_modules " },
+      file_ignore_patterns = { "node_modules" },
       vimgrep_arguments = {
         "rg",
         "--line-number",
