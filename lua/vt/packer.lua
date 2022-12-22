@@ -101,6 +101,7 @@ return packer.startup(function(use)
   use "jayp0521/mason-null-ls.nvim"
   use "zbirenbaum/copilot.lua"
   use "zbirenbaum/copilot-cmp"
+  use "smjonas/inc-rename.nvim"
 
   -- Git
   use "TimUntersberger/neogit"

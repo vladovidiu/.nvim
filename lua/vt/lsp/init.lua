@@ -51,4 +51,5 @@ import({ "mason", "mason-lspconfig", "lspconfig" }, function(modules)
   require "vt.lsp.null_ls"
   require "vt.lsp.fidget"
   require "vt.lsp.lsp_signature"
+  require "vt.lsp.inc_rename"
 end)

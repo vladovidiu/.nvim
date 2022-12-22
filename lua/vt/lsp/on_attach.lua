@@ -74,6 +74,16 @@ M.on_attach = function(client, bufnr)
 
   map("n", "gd", vim.lsp.buf.definition, opts)
   map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+
+  -- Need to decide between these 2 renaming maps
+  map("n", "<leader>rn", vim.lsp.buf.rename, opts)
+  map("n", "<leader>ir", ":IncRename ", opts)
+
+  -- Diagnostics
+  map("n", "[d", vim.diagnostic.goto_prev, opts)
+  map("n", "]d", vim.diagnostic.goto_next, opts)
+  map("n", "gl", vim.diagnostic.open_float, opts)
+
   map("n", "K", vim.lsp.buf.hover)
 end
 
