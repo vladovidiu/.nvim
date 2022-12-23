@@ -109,4 +109,7 @@ return packer.startup(function(use)
 
   -- Programming Language
   use "simrat39/rust-tools.nvim"
+
+  -- AI via ChatGPT
+  use "jackMort/ChatGPT.nvim"
 end)

@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["ChatGPT.nvim"] = {
+    loaded = true,
+    path = "/home/vt/.local/share/nvim/site/pack/packer/start/ChatGPT.nvim",
+    url = "https://github.com/jackMort/ChatGPT.nvim"
+  },
   ["Comment.nvim"] = {
     loaded = true,
     path = "/home/vt/.local/share/nvim/site/pack/packer/start/Comment.nvim",
@@ -325,9 +330,9 @@ time([[Conditional loading of telescope-fzf-native.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd nvim-ts-rainbow ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 vim.cmd [[ packadd nvim-autopairs ]]
-vim.cmd [[ packadd nvim-ts-rainbow ]]
 vim.cmd [[ packadd playground ]]
 time([[Sequenced loading]], false)
 
