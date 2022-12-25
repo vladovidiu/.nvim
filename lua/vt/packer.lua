@@ -112,4 +112,11 @@ return packer.startup(function(use)
 
   -- AI via ChatGPT
   use "jackMort/ChatGPT.nvim"
+  use {
+    "dense-analysis/neural",
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "ElPiloto/significant.nvim",
+    },
+  }
 end)

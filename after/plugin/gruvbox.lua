@@ -7,5 +7,7 @@ import("gruvbox", function(gruvbox)
   vim.cmd [[colorscheme gruvbox"]]
   vim.api.nvim_set_hl(0, "Normal", { guibg = NONE, ctermbg = NONE })
   vim.api.nvim_set_hl(0, "NormalFloat", { guibg = NONE, ctermbg = NONE })
+  vim.api.nvim_set_hl(0, "Pmenu", { guibg = NONE, ctermbg = NONE })
+  vim.api.nvim_set_hl(0, "PmenuSel", { guibg = NONE, ctermbg = NONE })
   vim.api.nvim_set_hl(0, "FloatBorder", { guibg = NONE, ctermbg = NONE })
 end)

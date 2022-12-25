@@ -209,6 +209,11 @@ _G.packer_plugins = {
     path = "/home/vt/.local/share/nvim/site/pack/packer/start/neogit",
     url = "https://github.com/TimUntersberger/neogit"
   },
+  neural = {
+    loaded = true,
+    path = "/home/vt/.local/share/nvim/site/pack/packer/start/neural",
+    url = "https://github.com/dense-analysis/neural"
+  },
   ["nui.nvim"] = {
     loaded = true,
     path = "/home/vt/.local/share/nvim/site/pack/packer/start/nui.nvim",
@@ -292,6 +297,11 @@ _G.packer_plugins = {
     path = "/home/vt/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
   },
+  ["significant.nvim"] = {
+    loaded = true,
+    path = "/home/vt/.local/share/nvim/site/pack/packer/start/significant.nvim",
+    url = "https://github.com/ElPiloto/significant.nvim"
+  },
   ["symbols-outline.nvim"] = {
     loaded = true,
     path = "/home/vt/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
@@ -330,9 +340,9 @@ time([[Conditional loading of telescope-fzf-native.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd nvim-ts-rainbow ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 vim.cmd [[ packadd nvim-autopairs ]]
+vim.cmd [[ packadd nvim-ts-rainbow ]]
 vim.cmd [[ packadd playground ]]
 time([[Sequenced loading]], false)
 
