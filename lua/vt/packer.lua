@@ -42,6 +42,7 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "feline-nvim/feline.nvim"
   use "stevearc/dressing.nvim"
+  use "norcalli/nvim-colorizer.lua"
 
   -- Treesitter
   use {

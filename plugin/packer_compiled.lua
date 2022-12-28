@@ -236,6 +236,11 @@ _G.packer_plugins = {
     path = "/home/vt/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/home/vt/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/vt/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -340,10 +345,10 @@ time([[Conditional loading of telescope-fzf-native.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd nvim-treesitter-textobjects ]]
-vim.cmd [[ packadd nvim-autopairs ]]
-vim.cmd [[ packadd nvim-ts-rainbow ]]
 vim.cmd [[ packadd playground ]]
+vim.cmd [[ packadd nvim-ts-rainbow ]]
+vim.cmd [[ packadd nvim-autopairs ]]
+vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
