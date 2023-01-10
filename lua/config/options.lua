@@ -1,3 +1,4 @@
+---@diagnostic disable: assign-type-mismatch
 local opt = vim.opt
 
 -- File Encoding
@@ -85,4 +86,9 @@ local default_plugins = {
 
 for _, plugin in pairs(default_plugins) do
   vim.g["loaded_" .. plugin] = 1
+end
+
+if vim.fn.has("nvim-0.9.0") == 1 then
+  vim.opt.splitkeep = "screen"
+  vim.o.shortmess = "filnxtToOFWIcC"
 end
