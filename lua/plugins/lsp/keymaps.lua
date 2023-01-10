@@ -3,11 +3,14 @@ local M = {}
 function M.on_attach(client, buffer)
   local self = M.new(client, buffer)
 
-  self:map("<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
-  self:map("<leader>cl", "LspInfo", { desc = "Lsp Info" })
-  self:map("<leader>xd", "Telescope diagnostics", { desc = "Telescope Diagnostics" })
-  self:map("gd", "Telescope lsp_definitions", { desc = "Goto Definition" })
+  self:map("gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
   self:map("gr", "Telescope lsp_references", { desc = "References" })
+  self:map("K", vim.lsp.buf.hover, { desc = "Hover" })
+  self:map("<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+  self:map("<leader>xd", "Telescope diagnostics", { desc = "Telescope Diagnostics" })
+  self:map("<leader>cl", "LspInfo", { desc = "Lsp Info" })
+
+  --self:map("gd", "Telescope lsp_definitions", { desc = "Goto Definition" })
   self:map("gD", "Telescope lsp_declarations", { desc = "Goto Declaration" })
   self:map("gI", "Telescope lsp_implementations", { desc = "Goto Implementation" })
   self:map("gt", "Telescope lsp_type_definitions", { desc = "Goto Type Definition" })

@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local lazy_status_ok, lazy = pcall(require, "lazy")
 if not lazy_status_ok then
-	return
+  return
 end
 
 lazy.setup({
@@ -21,6 +21,7 @@ lazy.setup({
     { import = "plugins" },
   },
   ui = {
+    border = "rounded",
     icons = {
       cmd = "⌘",
       config = "🛠",

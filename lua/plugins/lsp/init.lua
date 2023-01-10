@@ -56,7 +56,9 @@ return {
       local servers = opts.servers
       local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+      require("inc_rename").setup()
       require("fidget").setup()
+      require("lspconfig.ui.windows").default_options.border = "rounded"
       require("mason-lspconfig").setup({ ensure_installed = vim.tbl_keys(servers) })
       require("mason-lspconfig").setup_handlers({
         function(server)

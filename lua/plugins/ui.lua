@@ -15,7 +15,7 @@ return {
       end
     end,
   },
-  "MunifTanjim/nui.nvim",
+  { "MunifTanjim/nui.nvim", event = "VeryLazy" },
   {
     "rcarriga/nvim-notify",
     keys = {
