@@ -230,6 +230,9 @@ return {
         desc = "Neogit",
       },
     },
+    config = function()
+      require("neogit").setup()
+    end,
   },
 
   {
