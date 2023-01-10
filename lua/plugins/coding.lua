@@ -223,9 +223,6 @@ return {
   {
     "TimUntersberger/neogit",
     cmd = "Neogit",
-    dependencies = {
-      "lewis6991/gitsigns.nvim",
-    },
     keys = {
       {
         "<leader>gg",
@@ -233,6 +230,14 @@ return {
         desc = "Neogit",
       },
     },
+  },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "BufReadPost",
+    config = function()
+      require("gitsigns").setup()
+    end,
   },
 
   -- Copilot
