@@ -8,7 +8,7 @@ function M.on_attach(client, buffer)
   self:map("K", vim.lsp.buf.hover, { desc = "Hover" })
   self:map("<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
   self:map("<leader>xd", "Telescope diagnostics", { desc = "Telescope Diagnostics" })
-  self:map("<leader>cl", "LspInfo", { desc = "Lsp Info" })
+  self:map("<leader>li", "LspInfo", { desc = "Lsp Info" })
 
   --self:map("gd", "Telescope lsp_definitions", { desc = "Goto Definition" })
   self:map("gD", "Telescope lsp_declarations", { desc = "Goto Declaration" })
