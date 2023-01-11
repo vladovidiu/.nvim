@@ -8,7 +8,7 @@ return {
   },
   keys = {
     {
-      "<leader>pf", 
+      "<leader>pf",
       util.telescope("find_files"),
       desc = "Find Files",
     },
@@ -25,8 +25,9 @@ return {
     {
       "<leader>gp",
       function()
-        require("telescope.builtin").grep_string ({
-          search = vim.fn.input("Grep > ")
+        require("telescope.builtin").grep_string({
+          ---@diagnostic disable-next-line: param-type-mismatch
+          search = vim.fn.input("Grep > "),
         })
       end,
       desc = "Grep",

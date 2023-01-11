@@ -104,7 +104,7 @@ return {
       },
     },
   },
-  dependencies = { 
+  dependencies = {
     { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
     "nvim-treesitter/nvim-treesitter-textobjects", -- add rainbow highlighting to parens and brackets
     "mrjones2014/nvim-ts-rainbow",
