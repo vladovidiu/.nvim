@@ -6,12 +6,12 @@ return {
     dependencies = {
       { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
       { "folke/neodev.nvim", config = true },
+      { "j-hui/fidget.nvim", config = true },
+      { "smjonas/inc-rename.nvim", config = true },
+      { "simrat39/symbols-outline.nvim", config = true },
+      { "ray-x/lsp_signature.nvim", config = true },
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "simrat39/symbols-outline.nvim",
-      "ray-x/lsp_signature.nvim",
-      "j-hui/fidget.nvim",
-      "smjonas/inc-rename.nvim",
       "simrat39/rust-tools.nvim",
     },
     opts = {
@@ -70,8 +70,6 @@ return {
       local servers = opts.servers
       local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-      require("inc_rename").setup()
-      require("fidget").setup()
       require("lspconfig.ui.windows").default_options.border = "rounded"
       require("mason-lspconfig").setup({ ensure_installed = vim.tbl_keys(servers) })
       require("mason-lspconfig").setup_handlers({
