@@ -14,24 +14,12 @@ return {
       history = true,
       delete_check_events = "TextChanged",
     },
-    -- stylua: ignore
-    keys = {
-      {
-        "<tab>",
-        function()
-          return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-        end,
-        expr = true, remap = true, silent = true, mode = "i",
-      },
-      { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
-      { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
-    },
   },
 
   -- auto completion
   {
     "hrsh7th/nvim-cmp",
-    event = "BufReadPost",
+    event = "InsertEnter",
     dependencies = {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
@@ -246,7 +234,7 @@ return {
   -- Copilot
   {
     "zbirenbaum/copilot.lua",
-    event = "BufReadPost",
+    event = "InsertEnter",
     dependencies = {
       "zbirenbaum/copilot-cmp",
     },
