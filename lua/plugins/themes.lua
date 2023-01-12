@@ -30,6 +30,10 @@ return {
       })
 
       vim.o.background = "dark"
+      vim.cmd([[
+        hi NeogitDiffAdd guifg=#31748f
+        hi NeogitDiffDelete guifg=#eb6f92
+      ]])
       vim.cmd([[colorscheme rose-pine]])
     end,
   },
