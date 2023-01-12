@@ -11,6 +11,9 @@ return {
       "javascript",
       "typescript",
       "json",
+      "css",
+      "tsx",
+      "html",
     },
     autopairs = {
       enable = true,
@@ -34,7 +37,7 @@ return {
     },
     rainbow = {
       enable = true,
-      disable = { "tsx", "jsx" },
+      disable = {},
       extended_mode = true,
     },
     playground = {

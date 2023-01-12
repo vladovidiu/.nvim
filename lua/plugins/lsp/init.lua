@@ -104,6 +104,8 @@ return {
       return {
         sources = {
           nls.builtins.formatting.stylua,
+          nls.builtins.formatting.prettierd,
+          nls.builtins.diagnostics.eslint_d,
         },
       }
     end,
@@ -119,6 +121,8 @@ return {
     opts = {
       ensure_installed = {
         "stylua",
+        "prettierd",
+        "eslint_d",
       },
       ui = {
         border = "rounded",
