@@ -244,4 +244,41 @@ return {
       copilot_cmp.setup()
     end,
   },
+
+  -- ChatGPT
+  {
+    "jackMort/ChatGPT.nvim",
+    cmd = "ChatGPT",
+    keys = {
+      {
+        "<leader>gc",
+        "<cmd>ChatGPT<cr>",
+        desc = "ChatGPT",
+      },
+    },
+    config = true,
+  },
+
+  {
+    "dense-analysis/neural",
+    cmd = "Neural",
+    keys = {
+      {
+        "<leader>gn",
+        "<cmd>NeuralPrompt<cr>",
+        desc = "Neural",
+      },
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "ElPiloto/significant.nvim",
+    },
+    config = function()
+      require("neural").setup({
+        open_ai = {
+          api_key = vim.fn.getenv("OPENAI_API_KEY"),
+        },
+      })
+    end,
+  },
 }

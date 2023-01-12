@@ -6,10 +6,10 @@ return {
     dependencies = {
       { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
       { "folke/neodev.nvim", config = true },
-      { "j-hui/fidget.nvim", config = true },
       { "smjonas/inc-rename.nvim", config = true },
       { "simrat39/symbols-outline.nvim", config = true },
       { "ray-x/lsp_signature.nvim", config = true },
+      "j-hui/fidget.nvim",
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "simrat39/rust-tools.nvim",
@@ -65,6 +65,13 @@ return {
 
       vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
         border = "rounded",
+      })
+
+      -- Fidget
+      require("fidget").setup({
+        window = {
+          blend = 0,
+        },
       })
 
       local servers = opts.servers
