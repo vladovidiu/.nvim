@@ -31,7 +31,7 @@ return {
   -- auto completion
   {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    event = "BufReadPost",
     dependencies = {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
@@ -246,7 +246,7 @@ return {
   -- Copilot
   {
     "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
+    event = "BufReadPost",
     dependencies = {
       "zbirenbaum/copilot-cmp",
     },
