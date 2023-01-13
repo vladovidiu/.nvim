@@ -8,7 +8,7 @@ return {
   },
   {
     "max397574/better-escape.nvim",
-    event = "BufReadPost",
+    event = "InsertEnter",
     config = function()
       require("better_escape").setup({
         mapping = { "jk" },
