@@ -37,7 +37,7 @@ return {
     },
     rainbow = {
       enable = true,
-      disable = {},
+      disable = { "tsx", "jsx" },
       extended_mode = true,
     },
     playground = {
