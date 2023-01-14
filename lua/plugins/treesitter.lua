@@ -1,5 +1,9 @@
-import("nvim-treesitter.configs", function(treesitter)
-  treesitter.setup {
+return {
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  event = "BufReadPost",
+  opts = {
+    sync_install = false,
     ensure_installed = {
       "lua",
       "help",
@@ -7,6 +11,9 @@ import("nvim-treesitter.configs", function(treesitter)
       "javascript",
       "typescript",
       "json",
+      "css",
+      "tsx",
+      "html",
     },
     autopairs = {
       enable = true,
@@ -99,5 +106,14 @@ import("nvim-treesitter.configs", function(treesitter)
         },
       },
     },
-  }
-end)
+  },
+  dependencies = {
+    { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
+    "nvim-treesitter/nvim-treesitter-textobjects", -- add rainbow highlighting to parens and brackets
+    "mrjones2014/nvim-ts-rainbow",
+    "JoosepAlviste/nvim-ts-context-commentstring",
+  },
+  config = function(_, opts)
+    require("nvim-treesitter.configs").setup(opts)
+  end,
+}

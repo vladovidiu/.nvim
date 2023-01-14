@@ -1,3 +1,4 @@
+---@diagnostic disable: assign-type-mismatch
 local opt = vim.opt
 
 -- File Encoding
@@ -9,7 +10,7 @@ opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
 opt.undofile = true
-opt.undodir = vim.fn.stdpath "cache" .. "/undodir"
+opt.undodir = vim.fn.stdpath("cache") .. "/undodir"
 
 -- UI
 opt.termguicolors = true
@@ -32,7 +33,7 @@ opt.laststatus = 3
 opt.signcolumn = "yes"
 
 opt.showmode = false
-opt.isfname:append "@-@"
+opt.isfname:append("@-@")
 
 -- Indenting
 opt.tabstop = 4
@@ -42,13 +43,13 @@ opt.expandtab = true
 opt.smartindent = true
 
 -- Clipboard
-opt.clipboard:append { "unnamedplus" }
+opt.clipboard:append({ "unnamedplus" })
 
 opt.backspace = { "start", "eol", "indent" }
 
 -- Undercurl
-vim.cmd [[let &t_Cs = "\e[4:3m"]]
-vim.cmd [[let &t_Ce = "\e[4:0m"]]
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -85,4 +86,9 @@ local default_plugins = {
 
 for _, plugin in pairs(default_plugins) do
   vim.g["loaded_" .. plugin] = 1
+end
+
+if vim.fn.has("nvim-0.9.0") == 1 then
+  vim.opt.splitkeep = "screen"
+  vim.o.shortmess = "filnxtToOFWIcC"
 end
