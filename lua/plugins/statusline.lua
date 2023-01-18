@@ -142,7 +142,7 @@ return {
       components.active[1][4] = {
         provider = "git_branch",
         hl = {
-          fg = "yellow",
+          fg = "magenta",
           bg = "bg",
           style = "bold",
         },
