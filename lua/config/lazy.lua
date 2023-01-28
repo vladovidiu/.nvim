@@ -36,4 +36,5 @@ lazy.setup({
       task = "📌",
     },
   },
+  lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
 })
