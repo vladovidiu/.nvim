@@ -16,7 +16,8 @@ return {
     end,
   },
   {
-    "tpope/vim-sleuth",
+    "Darazaki/indent-o-matic",
+    config = true,
     event = "BufReadPost",
   },
   {
