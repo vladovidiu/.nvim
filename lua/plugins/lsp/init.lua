@@ -32,7 +32,7 @@ return {
     config = function(_, opts)
       require("util").on_attach(function(client, buffer)
         -- disable certain client features
-        if client.name == "sumneko_lua" then
+        if client.name == "sumneko_lua" or client.name == "rust_analyzer" then
           client.server_capabilities.semanticTokensProvider = nil
         end
 

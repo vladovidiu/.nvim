@@ -89,6 +89,6 @@ for _, plugin in pairs(default_plugins) do
 end
 
 if vim.fn.has("nvim-0.9.0") == 1 then
-  vim.opt.splitkeep = "screen"
+  vim.o.splitkeep = "screen"
   vim.o.shortmess = "filnxtToOFWIcC"
 end
