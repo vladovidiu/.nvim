@@ -211,6 +211,7 @@ return {
   {
     "TimUntersberger/neogit",
     cmd = "Neogit",
+    event = { "VeryLazy" },
     keys = {
       {
         "<leader>gg",
