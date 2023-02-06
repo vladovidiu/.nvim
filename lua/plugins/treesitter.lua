@@ -14,6 +14,8 @@ return {
       "css",
       "tsx",
       "html",
+      "cpp",
+      "c",
     },
     autopairs = {
       enable = true,

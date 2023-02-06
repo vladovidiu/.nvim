@@ -20,6 +20,7 @@ return {
         tsserver = {},
         sumneko_lua = require("plugins.lsp.languages.lua"),
         rust_analyzer = require("plugins.lsp.languages.rust").opts,
+        clangd = {},
       },
       setup = {
         rust_analyzer = function(_, opts)
