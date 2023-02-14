@@ -18,7 +18,7 @@ return {
       servers = {
         jsonls = {},
         tsserver = {},
-        sumneko_lua = require("plugins.lsp.languages.lua"),
+        lua_ls = require("plugins.lsp.languages.lua"),
         rust_analyzer = require("plugins.lsp.languages.rust").opts,
         clangd = {},
       },
