@@ -5,6 +5,10 @@ local opt = vim.opt
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
 
+-- Search
+opt.ignorecase = true
+opt.smartcase = true
+
 -- Backups
 opt.backup = false
 opt.writebackup = false
