@@ -61,7 +61,23 @@ return {
         white = "#e0def4",
         fg = "#e0def4",
         skyblue = "#9ccfd8",
-        red = "#ea6962",
+        red = "#eb6f92",
+      }
+
+      local light_colors = {
+        bg = "#fffaf3",
+        black = "#faf4ed",
+        yellow = "#ea9d34",
+        cyan = "#286983",
+        oceanblue = "#286983",
+        green = "#56949f",
+        orange = "#d7827e",
+        violet = "#907aa9",
+        magenta = "#b4637a",
+        white = "#575279",
+        fg = "#575279",
+        skyblue = "#56949f",
+        red = "#b4637a",
       }
 
       -- local colors = {
