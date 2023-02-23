@@ -21,6 +21,8 @@ map("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 map("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 map("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+map("n", "<leader>ft", "<cmd>ToggleTerm<cr>", opts)
+
 -- Line navigation
 map("i", "<C-b>", "<ESC>^i", opts)
 map("i", "<C-e>", "<END>", opts)

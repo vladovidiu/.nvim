@@ -94,4 +94,22 @@ return {
       })
     end,
   },
+  -- toggleterm
+  {
+    "akinsho/toggleterm.nvim",
+    cmd = { "ToggleTerm", "TermExec" },
+    version = "*",
+    config = function()
+      require("toggleterm").setup({
+        size = 10,
+        open_mapping = [[<c-\>]],
+        shading_factor = 2,
+        direction = "float",
+        float_opts = {
+          border = "rounded",
+          highlights = { border = "Normal", background = "Normal" },
+        },
+      })
+    end,
+  },
 }
