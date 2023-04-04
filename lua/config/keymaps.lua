@@ -26,3 +26,15 @@ map("n", "<leader>ft", "<cmd>ToggleTerm<cr>", opts)
 -- Line navigation
 map("i", "<C-b>", "<ESC>^i", opts)
 map("i", "<C-e>", "<END>", opts)
+
+-- Move to window using <ctrl> hjkl keys
+map("n", "<C-h>", require("smart-splits").move_cursor_left, opts)
+map("n", "<C-j>", require("smart-splits").move_cursor_down, opts)
+map("n", "<C-k>", require("smart-splits").move_cursor_up, opts)
+map("n", "<C-l>", require("smart-splits").move_cursor_right, opts)
+
+-- Resize windows
+map("n", "<A-h>", require("smart-splits").resize_left, opts)
+map("n", "<A-j>", require("smart-splits").resize_down, opts)
+map("n", "<A-k>", require("smart-splits").resize_up, opts)
+map("n", "<A-l>", require("smart-splits").resize_right, opts)

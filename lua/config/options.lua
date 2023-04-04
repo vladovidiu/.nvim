@@ -36,6 +36,9 @@ opt.relativenumber = true
 opt.laststatus = 3
 opt.signcolumn = "yes"
 
+opt.grepformat = "%f:%l:%c:%m"
+opt.grepprg = "rg --vimgrep"
+
 opt.showmode = false
 opt.isfname:append("@-@")
 

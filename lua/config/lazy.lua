@@ -37,4 +37,5 @@ lazy.setup({
     },
   },
   lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
+  checker = { enabled = true }, -- automatically check for plugin updates
 })

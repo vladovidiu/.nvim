@@ -1,3 +1,8 @@
+-- helper function to create autocmds
+local function augroup(name)
+  return vim.api.nvim_create_augroup("vt_" .. name, { clear = true })
+end
+
 vim.api.nvim_create_user_command("WatchTest", function()
   local overseer = require("overseer")
   overseer.run_template({ name = "test script" }, function(task)
@@ -11,3 +16,11 @@ vim.api.nvim_create_user_command("WatchTest", function()
     end
   end)
 end, {})
+
+-- resize splits if window got resized
+vim.api.nvim_create_autocmd({ "VimResized" }, {
+  group = augroup("resize_splits"),
+  callback = function()
+    vim.cmd("tabdo wincmd =")
+  end,
+})

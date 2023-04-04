@@ -112,4 +112,7 @@ return {
       })
     end,
   },
+
+  -- smart splits
+  { "mrjones2014/smart-splits.nvim" },
 }
