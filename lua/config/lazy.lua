@@ -12,9 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local lazy_status_ok, lazy = pcall(require, "lazy")
-if not lazy_status_ok then
-  return
-end
+if not lazy_status_ok then return end
 
 lazy.setup({
   spec = {
@@ -37,5 +35,6 @@ lazy.setup({
     },
   },
   lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
-  checker = { enabled = true }, -- automatically check for plugin updates
+  checker = { enabled = true, notify = false }, -- automatically check for plugin updates
+  change_detection = { notify = false },
 })
