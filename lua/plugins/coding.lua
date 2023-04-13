@@ -7,9 +7,7 @@ return {
     event = "InsertEnter",
     dependencies = {
       "rafamadriz/friendly-snippets",
-      config = function()
-        require("luasnip.loaders.from_vscode").lazy_load()
-      end,
+      config = function() require("luasnip.loaders.from_vscode").lazy_load() end,
     },
     opts = {
       history = true,
@@ -55,9 +53,7 @@ return {
           completeopt = "menu,menuone,noinsert",
         },
         snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
+          expand = function(args) require("luasnip").lsp_expand(args.body) end,
         },
         mapping = {
           ["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -162,14 +158,10 @@ return {
     event = "VeryLazy",
     opts = {
       hooks = {
-        pre = function()
-          require("ts_context_commentstring.internal").update_commentstring({})
-        end,
+        pre = function() require("ts_context_commentstring.internal").update_commentstring({}) end,
       },
     },
-    config = function(_, opts)
-      require("mini.comment").setup(opts)
-    end,
+    config = function(_, opts) require("mini.comment").setup(opts) end,
   },
 
   -- better text-objects
@@ -209,25 +201,25 @@ return {
   },
 
   -- git
-  {
-    "TimUntersberger/neogit",
-    cmd = "Neogit",
-    event = { "VeryLazy" },
-    keys = {
-      {
-        "<leader>gg",
-        "<cmd>Neogit<cr>",
-        desc = "Neogit",
-      },
-    },
-    config = function()
-      require("neogit").setup({
-        integrations = {
-          diffview = true,
-        },
-      })
-    end,
-  },
+  -- {
+  --   "TimUntersberger/neogit",
+  --   cmd = "Neogit",
+  --   event = { "VeryLazy" },
+  --   keys = {
+  --     {
+  --       "<leader>gg",
+  --       "<cmd>Neogit<cr>",
+  --       desc = "Neogit",
+  --     },
+  --   },
+  --   config = function()
+  --     require("neogit").setup({
+  --       integrations = {
+  --         diffview = true,
+  --       },
+  --     })
+  --   end,
+  -- },
 
   -- better diffing
   {
@@ -240,9 +232,7 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     event = "BufReadPost",
-    config = function()
-      require("gitsigns").setup()
-    end,
+    config = function() require("gitsigns").setup() end,
   },
 
   -- Copilot

@@ -1,3 +1,5 @@
+local Util = require("util")
+
 local map = vim.keymap.set
 
 local opts = { noremap = true, silent = true }
@@ -38,3 +40,12 @@ map("n", "<A-h>", require("smart-splits").resize_left, opts)
 map("n", "<A-j>", require("smart-splits").resize_down, opts)
 map("n", "<A-k>", require("smart-splits").resize_up, opts)
 map("n", "<A-l>", require("smart-splits").resize_right, opts)
+
+-- lazygit
+map(
+  "n",
+  "<leader>gg",
+  function() Util.float_term({ "lazygit" }, { cwd = Util.get_root() }) end,
+  { desc = "Lazygit (root dir)" }
+)
+map("n", "<leader>gG", function() Util.float_term({ "lazygit" }) end, { desc = "Lazygit (cwd)" })
