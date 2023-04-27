@@ -200,27 +200,6 @@ return {
     end,
   },
 
-  -- git
-  -- {
-  --   "TimUntersberger/neogit",
-  --   cmd = "Neogit",
-  --   event = { "VeryLazy" },
-  --   keys = {
-  --     {
-  --       "<leader>gg",
-  --       "<cmd>Neogit<cr>",
-  --       desc = "Neogit",
-  --     },
-  --   },
-  --   config = function()
-  --     require("neogit").setup({
-  --       integrations = {
-  --         diffview = true,
-  --       },
-  --     })
-  --   end,
-  -- },
-
   -- better diffing
   {
     "sindrets/diffview.nvim",
