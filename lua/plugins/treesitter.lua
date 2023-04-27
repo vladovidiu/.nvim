@@ -6,7 +6,6 @@ return {
     sync_install = false,
     ensure_installed = {
       "lua",
-      "help",
       "rust",
       "javascript",
       "typescript",
@@ -115,7 +114,5 @@ return {
     "mrjones2014/nvim-ts-rainbow",
     "JoosepAlviste/nvim-ts-context-commentstring",
   },
-  config = function(_, opts)
-    require("nvim-treesitter.configs").setup(opts)
-  end,
+  config = function(_, opts) require("nvim-treesitter.configs").setup(opts) end,
 }
