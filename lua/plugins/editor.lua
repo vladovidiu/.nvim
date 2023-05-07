@@ -127,6 +127,14 @@ return {
     config = function()
       require("neoai").setup({
         -- Options go here
+        open_api_key_env = "OPENAI_API_KEY",
+        models = {
+          {
+            name = "openai",
+            model = "gpt-4-0314",
+            params = nil,
+          },
+        },
       })
     end,
   },
