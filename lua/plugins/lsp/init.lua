@@ -21,6 +21,7 @@ return {
         lua_ls = require("plugins.lsp.languages.lua"),
         rust_analyzer = require("plugins.lsp.languages.rust").opts,
         clangd = {},
+        pyright = {},
       },
       setup = {
         rust_analyzer = function(_, opts)
@@ -85,13 +86,9 @@ return {
           local server_opts = servers[server] or {}
           server_opts.capabilities = capabilities
           if opts.setup[server] then
-            if opts.setup[server](server, server_opts) then
-              return
-            end
+            if opts.setup[server](server, server_opts) then return end
           elseif opts.setup["*"] then
-            if opts.setup["*"](server, server_opts) then
-              return
-            end
+            if opts.setup["*"](server, server_opts) then return end
           end
           require("lspconfig")[server].setup(server_opts)
         end,
@@ -113,7 +110,9 @@ return {
         sources = {
           nls.builtins.formatting.stylua,
           nls.builtins.formatting.prettierd,
+          nls.builtins.formatting.black,
           nls.builtins.diagnostics.eslint_d,
+          nls.builtins.diagnostics.flake8,
         },
       }
     end,
@@ -141,9 +140,7 @@ return {
       local mr = require("mason-registry")
       for _, tool in ipairs(opts.ensure_installed) do
         local p = mr.get_package(tool)
-        if not p:is_installed() then
-          p:install()
-        end
+        if not p:is_installed() then p:install() end
       end
     end,
   },

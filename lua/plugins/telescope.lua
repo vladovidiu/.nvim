@@ -13,6 +13,11 @@ return {
       desc = "Find Files",
     },
     {
+      "<leader>pF",
+      util.telescope("find_files", { hidden = true }),
+      desc = "Find Files",
+    },
+    {
       "<leader>bb",
       util.telescope("buffers"),
       desc = "Find Buffers",
