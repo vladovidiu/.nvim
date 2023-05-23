@@ -113,9 +113,7 @@ return {
 
       -- vi-symbol
       components.active[1][2] = {
-        provider = function()
-          return vi_mode_text[vi_mode_utils.get_vim_mode()]
-        end,
+        provider = function() return vi_mode_text[vi_mode_utils.get_vim_mode()] end,
         hl = function()
           local val = {}
 
@@ -213,9 +211,7 @@ return {
       -- diagnosticErrors
       components.active[2][1] = {
         provider = "diagnostic_errors",
-        enabled = function()
-          return lsp.diagnostics_exist(vim.diagnostic.severity.ERROR)
-        end,
+        enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.ERROR) end,
         hl = {
           fg = "red",
           style = "bold",
@@ -225,9 +221,7 @@ return {
       -- diagnosticWarn
       components.active[2][2] = {
         provider = "diagnostic_warnings",
-        enabled = function()
-          return lsp.diagnostics_exist(vim.diagnostic.severity.WARN)
-        end,
+        enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.WARN) end,
         hl = {
           fg = "yellow",
           style = "bold",
@@ -237,9 +231,7 @@ return {
       -- diagnosticHint
       components.active[2][3] = {
         provider = "diagnostic_hints",
-        enabled = function()
-          return lsp.diagnostics_exist(vim.diagnostic.severity.HINT)
-        end,
+        enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.HINT) end,
         hl = {
           fg = "cyan",
           style = "bold",
@@ -249,9 +241,7 @@ return {
       -- diagnosticInfo
       components.active[2][4] = {
         provider = "diagnostic_info",
-        enabled = function()
-          return lsp.diagnostics_exist(vim.diagnostic.severity.INFO)
-        end,
+        enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.INFO) end,
         hl = {
           fg = "skyblue",
           style = "bold",
@@ -280,9 +270,7 @@ return {
           local extension = vim.fn.expand("%:e")
           local icon = icons.get_icon(filename, extension)
 
-          if icon == nil then
-            icon = " "
-          end
+          if icon == nil then icon = " " end
 
           return icon
         end,
@@ -343,9 +331,7 @@ return {
 
       -- fileformat
       components.active[3][5] = {
-        provider = function()
-          return "" .. vim.bo.fileformat .. ""
-        end,
+        provider = function() return "" .. vim.bo.fileformat .. "" end,
         enabled = false,
         hl = {
           fg = "white",
