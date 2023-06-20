@@ -22,6 +22,7 @@ return {
         rust_analyzer = require("plugins.lsp.languages.rust").opts,
         clangd = {},
         pyright = {},
+        solargraph = {},
       },
       setup = {
         rust_analyzer = function(_, opts)
@@ -111,6 +112,7 @@ return {
           nls.builtins.formatting.stylua,
           nls.builtins.formatting.prettierd,
           nls.builtins.formatting.black,
+          nls.builtins.formatting.rubocop,
           nls.builtins.diagnostics.eslint_d,
           nls.builtins.diagnostics.flake8,
         },
