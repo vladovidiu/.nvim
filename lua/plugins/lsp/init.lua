@@ -9,7 +9,7 @@ return {
       { "smjonas/inc-rename.nvim", config = true },
       { "simrat39/symbols-outline.nvim", config = true },
       { "ray-x/lsp_signature.nvim", config = true },
-      "j-hui/fidget.nvim",
+      { "j-hui/fidget.nvim", tag = "legacy" },
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "simrat39/rust-tools.nvim",
