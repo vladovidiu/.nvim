@@ -228,10 +228,6 @@ return {
       vim.keymap.del({ "x", "o" }, "X")
     end,
   },
-  {
-    "m4xshen/hardtime.nvim",
-    opts = {},
-  },
   { "tpope/vim-repeat", event = "VeryLazy" },
   {
     "folke/flash.nvim",
