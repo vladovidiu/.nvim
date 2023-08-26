@@ -111,7 +111,7 @@ return {
   dependencies = {
     { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
     "nvim-treesitter/nvim-treesitter-textobjects", -- add rainbow highlighting to parens and brackets
-    "mrjones2014/nvim-ts-rainbow",
+    "HiPhish/nvim-ts-rainbow2",
     "JoosepAlviste/nvim-ts-context-commentstring",
   },
   config = function(_, opts) require("nvim-treesitter.configs").setup(opts) end,
