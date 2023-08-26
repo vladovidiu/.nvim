@@ -79,6 +79,16 @@ function M.fg(name)
   return fg and { fg = string.format("#%06x", fg) }
 end
 
+function M.opts(name)
+  local plugin = require("lazy.core.config").plugins[name]
+  if not plugin then return {} end
+  local Plugin = require("lazy.core.plugin")
+  return Plugin.values(plugin, "opts", false)
+end
+
+---@param plugin string
+function M.has(plugin) return require("lazy.core.config").spec.plugins[plugin] ~= nil end
+
 -- FIXME: create a togglable terminal
 -- Opens a floating terminal (interactive by default)
 ---@param cmd? string[]|string

@@ -12,23 +12,16 @@ return {
       { "j-hui/fidget.nvim", tag = "legacy" },
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "simrat39/rust-tools.nvim",
     },
     opts = {
       servers = {
         jsonls = {},
-        tsserver = {},
         lua_ls = require("plugins.lsp.languages.lua"),
-        rust_analyzer = require("plugins.lsp.languages.rust").opts,
         clangd = {},
         pyright = {},
         solargraph = {},
       },
       setup = {
-        rust_analyzer = function(_, opts)
-          require("plugins.lsp.languages.rust").setup(_, opts)
-          return true
-        end,
         ["*"] = function(_, _) end,
       },
     },

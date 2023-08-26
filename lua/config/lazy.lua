@@ -17,6 +17,11 @@ if not lazy_status_ok then return end
 lazy.setup({
   spec = {
     { import = "plugins" },
+    { import = "plugins.extras.dap" },
+    { import = "plugins.extras.test" },
+    { import = "plugins.lsp.languages.rust" },
+    { import = "plugins.lsp.languages.ts" },
+    { import = "plugins.lsp.languages.tailwind" },
   },
   ui = {
     border = "rounded",

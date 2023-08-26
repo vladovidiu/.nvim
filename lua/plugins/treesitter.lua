@@ -6,15 +6,13 @@ return {
     sync_install = false,
     ensure_installed = {
       "lua",
-      "rust",
       "javascript",
-      "typescript",
       "json",
       "css",
-      "tsx",
       "html",
       "cpp",
       "c",
+      "regex",
     },
     autopairs = {
       enable = true,
