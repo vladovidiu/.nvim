@@ -9,8 +9,8 @@ return {
   keys = {
     {
       "<leader>pf",
-      util.telescope("find_files"),
-      desc = "Find Files",
+      util.telescope("git_files"),
+      desc = "Git Files",
     },
     {
       "<leader>pF",
