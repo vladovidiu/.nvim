@@ -20,10 +20,24 @@ return {
         clangd = {},
         pyright = {},
         solargraph = {},
+        astro = {},
       },
       setup = {
         ["*"] = function(_, _) end,
       },
+      -- add any global capabilities here
+      capabilities = {},
+      -- Automatically format on save
+      autoformat = true,
+      -- options for vim.lsp.buf.format
+      -- `bufnr` and `filter` is handled by the LazyVim formatter,
+      -- but can be also overridden when specified
+      format = {
+        formatting_options = nil,
+        timeout_ms = nil,
+      },
+      -- LSP Server Settings
+      ---@type lspconfig.options
     },
     config = function(_, opts)
       require("util").on_attach(function(client, buffer)
@@ -33,7 +47,7 @@ return {
         end
 
         require("plugins.lsp.keymaps").on_attach(client, buffer)
-        require("plugins.lsp.format").on_attach(client, buffer)
+        require("plugins.lsp.format").setup(opts)
       end)
 
       -- diagnostics
@@ -103,7 +117,11 @@ return {
       return {
         sources = {
           nls.builtins.formatting.stylua,
-          nls.builtins.formatting.prettierd,
+          nls.builtins.formatting.prettierd.with({
+            extra_filetypes = {
+              "astro",
+            },
+          }),
           nls.builtins.formatting.black,
           nls.builtins.formatting.rubocop,
           nls.builtins.diagnostics.eslint_d,

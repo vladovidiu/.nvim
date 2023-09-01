@@ -13,6 +13,7 @@ return {
       "cpp",
       "c",
       "regex",
+      "astro",
     },
     autopairs = {
       enable = true,
