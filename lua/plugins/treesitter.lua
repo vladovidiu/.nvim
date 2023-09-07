@@ -35,11 +35,6 @@ return {
         node_decremental = "<c-backspace>",
       },
     },
-    rainbow = {
-      enable = true,
-      disable = { "tsx", "jsx" },
-      extended_mode = true,
-    },
     playground = {
       enable = true,
       updatetime = 25,
@@ -110,7 +105,7 @@ return {
   dependencies = {
     { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
     "nvim-treesitter/nvim-treesitter-textobjects", -- add rainbow highlighting to parens and brackets
-    "HiPhish/nvim-ts-rainbow2",
+    "hiphish/rainbow-delimiters.nvim",
     "JoosepAlviste/nvim-ts-context-commentstring",
   },
   config = function(_, opts) require("nvim-treesitter.configs").setup(opts) end,
