@@ -14,6 +14,7 @@ return {
       "c",
       "regex",
       "astro",
+      "markdown",
     },
     autopairs = {
       enable = true,
