@@ -13,6 +13,7 @@ return {
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
     },
+    ---@class PluginLspOpts
     opts = {
       servers = {
         jsonls = {},
@@ -124,7 +125,9 @@ return {
           }),
           nls.builtins.formatting.black,
           nls.builtins.formatting.rubocop,
-          nls.builtins.diagnostics.eslint_d,
+          nls.builtins.diagnostics.eslint_d.with({
+            condition = function(utils) return utils.root_has_file_matches("eslint") end,
+          }),
           nls.builtins.diagnostics.flake8,
         },
       }
