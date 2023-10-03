@@ -100,3 +100,5 @@ if vim.fn.has("nvim-0.9.0") == 1 then
   vim.o.shortmess = "filnxtToOFWcC"
   vim.opt.diffopt:append("linematch:60")
 end
+
+if vim.fn.has("nvim-0.10") == 1 then opt.smoothscroll = true end
