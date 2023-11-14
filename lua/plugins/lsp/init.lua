@@ -9,7 +9,7 @@ return {
       { "smjonas/inc-rename.nvim", config = true },
       { "simrat39/symbols-outline.nvim", config = true },
       { "ray-x/lsp_signature.nvim", config = true },
-      { "j-hui/fidget.nvim", tag = "legacy" },
+      { "j-hui/fidget.nvim" },
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
     },
@@ -80,8 +80,11 @@ return {
 
       -- Fidget
       require("fidget").setup({
-        window = {
-          blend = 0,
+        notification = {
+          -- Options related to the notification window and buffer
+          window = {
+            winblend = 0, -- Background color opacity in the notification window
+          },
         },
       })
 
