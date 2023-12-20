@@ -51,10 +51,6 @@ return {
     },
   },
   {
-    "nvimtools/none-ls.nvim",
-    opts = function(_, opts) table.insert(opts.sources, require("typescript.extensions.null-ls.code-actions")) end,
-  },
-  {
     "mfussenegger/nvim-dap",
     optional = true,
     dependencies = {
@@ -105,5 +101,29 @@ return {
         end
       end
     end,
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        ["javascript"] = { "prettierd" },
+        ["javascriptreact"] = { "prettierd" },
+        ["typescript"] = { "prettierd" },
+        ["typescriptreact"] = { "prettierd" },
+        ["vue"] = { "prettierd" },
+        ["css"] = { "prettierd" },
+        ["scss"] = { "prettierd" },
+        ["less"] = { "prettierd" },
+        ["html"] = { "prettierd" },
+        ["json"] = { "prettierd" },
+        ["jsonc"] = { "prettierd" },
+        ["yaml"] = { "prettierd" },
+        ["markdown"] = { "prettierd" },
+        ["markdown.mdx"] = { "prettierd" },
+        ["graphql"] = { "prettierd" },
+        ["handlebars"] = { "prettierd" },
+      },
+    },
   },
 }

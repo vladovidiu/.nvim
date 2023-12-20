@@ -49,7 +49,6 @@ return {
         end
 
         require("plugins.lsp.keymaps").on_attach(client, buffer)
-        require("plugins.lsp.format").setup(opts)
       end)
 
       -- diagnostics
@@ -106,35 +105,6 @@ return {
           require("lspconfig")[server].setup(server_opts)
         end,
       })
-    end,
-  },
-
-  -- formatters
-  {
-    "nvimtools/none-ls.nvim",
-    event = "BufReadPre",
-    dependencies = {
-      "mason.nvim",
-      "jayp0521/mason-null-ls.nvim",
-    },
-    opts = function()
-      local nls = require("null-ls")
-      return {
-        sources = {
-          nls.builtins.formatting.stylua,
-          nls.builtins.formatting.prettierd.with({
-            extra_filetypes = {
-              "astro",
-            },
-          }),
-          nls.builtins.formatting.black,
-          nls.builtins.formatting.rubocop,
-          nls.builtins.diagnostics.eslint_d.with({
-            condition = function(utils) return utils.root_has_file_matches("eslint") end,
-          }),
-          nls.builtins.diagnostics.flake8,
-        },
-      }
     end,
   },
 
