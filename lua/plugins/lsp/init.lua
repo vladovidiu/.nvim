@@ -22,6 +22,7 @@ return {
         pyright = {},
         solargraph = {},
         astro = {},
+        elixirls = {},
       },
       setup = {
         ["*"] = function(_, _) end,

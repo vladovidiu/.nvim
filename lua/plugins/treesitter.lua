@@ -15,6 +15,7 @@ return {
       "regex",
       "astro",
       "markdown",
+      "elixir",
     },
     autopairs = {
       enable = true,
