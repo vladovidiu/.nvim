@@ -5,6 +5,7 @@ return {
   opts = {
     sync_install = false,
     ensure_installed = {
+      "bash",
       "lua",
       "javascript",
       "json",
@@ -16,6 +17,8 @@ return {
       "astro",
       "markdown",
       "elixir",
+      "vim",
+      "vimdoc",
     },
     autopairs = {
       enable = true,
