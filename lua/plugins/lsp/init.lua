@@ -23,6 +23,7 @@ return {
         astro = {},
         elixirls = {},
         ruby_ls = {},
+        sorbet = {},
       },
       setup = {
         ["*"] = function(_, _) end,
