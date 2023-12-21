@@ -20,9 +20,9 @@ return {
         lua_ls = require("plugins.lsp.languages.lua"),
         clangd = {},
         pyright = {},
-        solargraph = {},
         astro = {},
         elixirls = {},
+        ruby_ls = {},
       },
       setup = {
         ["*"] = function(_, _) end,
