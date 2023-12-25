@@ -19,6 +19,10 @@ return {
       "elixir",
       "vim",
       "vimdoc",
+      "ruby",
+    },
+    endwise = {
+      enable = true,
     },
     autopairs = {
       enable = true,
@@ -112,6 +116,8 @@ return {
     "nvim-treesitter/nvim-treesitter-textobjects", -- add rainbow highlighting to parens and brackets
     "hiphish/rainbow-delimiters.nvim",
     "JoosepAlviste/nvim-ts-context-commentstring",
+    "RRethy/nvim-treesitter-endwise",
+    "windwp/nvim-ts-autotag",
   },
   config = function(_, opts) require("nvim-treesitter.configs").setup(opts) end,
 }
