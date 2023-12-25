@@ -19,7 +19,7 @@ return {
       "elixir",
       "vim",
       "vimdoc",
-      "ruby",
+      "yaml",
     },
     endwise = {
       enable = true,
