@@ -11,7 +11,7 @@ return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
-        "ruby_ls",
+        "ruby-lsp",
         "sorbet",
       })
     end,
@@ -20,8 +20,12 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        sorbet = {},
-        ruby_ls = {},
+        sorbet = {
+          cmd = { "bundle", "exec", "srb", "tc", "--lsp" },
+        },
+        ruby_ls = {
+          cmd = { "bundle", "exec", "ruby-lsp" },
+        },
       },
     },
   },

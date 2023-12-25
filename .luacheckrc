@@ -1,3 +1,3 @@
 globals = {
-  vim = { fields = { "g", "api", "fn", "lsp" } },
+  vim = { fields = { "g", "api", "fn", "lsp", "list" } },
 }
