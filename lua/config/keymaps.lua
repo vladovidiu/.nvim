@@ -8,7 +8,7 @@ local term_opts = { silent = true }
 map({ "n", "v" }, "<Space>", "<Nop>", opts)
 
 -- Netrw
-map("n", "<leader>pv", vim.cmd.Ex, opts)
+map("n", "<leader>pv", vim.cmd.Oil, opts)
 
 -- Misc
 map("n", "<ESC>", ":noh<CR>", opts) -- clear search results
