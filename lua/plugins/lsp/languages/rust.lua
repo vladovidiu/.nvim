@@ -134,6 +134,7 @@ return {
       },
     },
   },
+
   {
     "nvim-neotest/neotest",
     optional = true,
@@ -143,6 +144,16 @@ return {
     opts = {
       adapters = {
         ["neotest-rust"] = {},
+      },
+    },
+  },
+
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        ["rust"] = { "rustfmt" },
       },
     },
   },
