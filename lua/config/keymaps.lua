@@ -42,9 +42,10 @@ map("n", "<A-k>", require("smart-splits").resize_up, opts)
 map("n", "<A-l>", require("smart-splits").resize_right, opts)
 
 -- lazygit
+map("n", "<leader>gg", "<cmd>LazyGit<cr>", opts)
 map(
   "n",
-  "<leader>gg",
+  "<leader>Gg",
   function() Util.float_term({ "lazygit" }, { cwd = Util.get_root() }) end,
   { desc = "Lazygit (root dir)" }
 )
