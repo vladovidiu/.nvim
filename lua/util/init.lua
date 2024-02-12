@@ -2,13 +2,23 @@ local M = {}
 
 M.root_patterns = { ".git", "/lua" }
 
+---@param buf? number
+local function inlay_hints(buf)
+  local ih = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
+  if type(ih) == "function" then
+    ih(buf, true)
+  elseif type(ih) == "table" and ih.enable then
+    ih.enable(buf, true)
+  end
+end
+
 ---@param on_attach fun(client, buffer)
 function M.on_attach(on_attach)
   vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
       local buffer = args.buf
       local client = vim.lsp.get_client_by_id(args.data.client_id)
-      if client ~= nil and client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(buffer, true) end
+      if client ~= nil and client.server_capabilities.inlayHintProvider then inlay_hints(buffer) end
       on_attach(client, buffer)
     end,
   })
