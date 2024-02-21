@@ -14,11 +14,6 @@ return {
     end,
   },
   {
-    "Darazaki/indent-o-matic",
-    config = true,
-    event = "BufReadPost",
-  },
-  {
     "echasnovski/mini.surround",
     keys = { "gz" },
     opts = {
