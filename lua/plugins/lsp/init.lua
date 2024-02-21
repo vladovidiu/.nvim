@@ -116,7 +116,6 @@ return {
     },
     opts = {
       ensure_installed = {
-        "stylua",
         "prettierd",
         "eslint_d",
       },
@@ -132,5 +131,16 @@ return {
         if not p:is_installed() then p:install() end
       end
     end,
+  },
+
+  -- tool to install some other binaries, like stylua
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opts = {
+      ensure_installed = {
+        "stylua",
+      },
+    },
+    config = function(_, opts) require("mason-tool-installer").setup(opts) end,
   },
 }
