@@ -6,6 +6,7 @@ return {
     -- fancy UI for the debugger
     {
       "rcarriga/nvim-dap-ui",
+      "nvim-neotest/nvim-nio",
       -- stylua: ignore
       keys = {
         { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
