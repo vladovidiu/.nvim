@@ -8,6 +8,8 @@ return {
         fish = { "fish" },
         lua = { "luacheck" },
         ruby = { "rubocop" },
+        typescript = { "eslint_d" },
+        typescriptreact = { "eslint_d" },
         -- Use the "*" filetype to run linters on all filetypes.
         -- ['*'] = { 'global linter' },
         -- Use the "_" filetype to run linters on filetypes that don't have other linters configured.
