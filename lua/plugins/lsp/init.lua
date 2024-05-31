@@ -7,7 +7,6 @@ return {
       { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
       { "folke/neodev.nvim", config = true },
       { "smjonas/inc-rename.nvim", config = true },
-      { "simrat39/symbols-outline.nvim", config = true },
       { "ray-x/lsp_signature.nvim", config = true },
       { "j-hui/fidget.nvim" },
       "mason.nvim",
