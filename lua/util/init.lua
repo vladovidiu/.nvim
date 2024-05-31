@@ -8,7 +8,7 @@ local function inlay_hints(buf)
   if type(ih) == "function" then
     ih(buf, true)
   elseif type(ih) == "table" and ih.enable then
-    ih.enable(buf, true)
+    ih.enable(true, { bufnr = buf })
   end
 end
 
