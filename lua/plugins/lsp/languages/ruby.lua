@@ -23,7 +23,7 @@ return {
         sorbet = {
           cmd = { "bundle", "exec", "srb", "tc", "--lsp" },
         },
-        ruby_ls = {
+        ruby_lsp = {
           cmd = { "bundle", "exec", "ruby-lsp" },
         },
       },
