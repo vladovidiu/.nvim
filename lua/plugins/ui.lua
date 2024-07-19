@@ -1,5 +1,9 @@
 return {
-  "nvim-tree/nvim-web-devicons",
+  {
+    "echasnovski/mini.nvim",
+    version = false,
+    config = function() require("mini.icons").mock_nvim_web_devicons() end,
+  },
   {
     "stevearc/dressing.nvim",
     init = function()
