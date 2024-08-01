@@ -30,6 +30,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "lspinfo",
     "man",
     "notify",
+    "grug-far",
     "qf",
     "query",
     "spectre_panel",
