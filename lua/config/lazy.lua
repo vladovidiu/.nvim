@@ -23,6 +23,7 @@ lazy.setup({
     { import = "plugins.lsp.languages.ts" },
     { import = "plugins.lsp.languages.tailwind" },
     { import = "plugins.lsp.languages.ruby" },
+    -- { import = "plugins.lsp.languages.markdown" },
   },
   ui = {
     border = "rounded",

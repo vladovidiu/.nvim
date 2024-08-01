@@ -15,7 +15,6 @@ return {
       "c",
       "regex",
       "astro",
-      "markdown",
       "elixir",
       "vim",
       "vimdoc",
