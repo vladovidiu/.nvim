@@ -115,4 +115,18 @@ M.check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
+---@param kind string
+function M.pick(kind)
+  return function()
+    local actions = require("CopilotChat.actions")
+    local items = actions[kind .. "_actions"]()
+    if not items then
+      LazyVim.warn("No " .. kind .. " found on the current line")
+      return
+    end
+    local ok = pcall(require, "fzf-lua")
+    require("CopilotChat.integrations." .. (ok and "fzflua" or "telescope")).pick(items)
+  end
+end
+
 return M

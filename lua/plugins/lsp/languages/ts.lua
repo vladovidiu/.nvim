@@ -15,8 +15,8 @@ return {
     opts = {
       -- make sure mason installs the server
       servers = {
-        ---@type lspconfig.options.tsserver
-        tsserver = {
+        ---@type lspconfig.options.ts_ls
+        ts_ls = {
           keys = {
             { "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", desc = "Organize Imports" },
             { "<leader>cR", "<cmd>TypescriptRenameFile<CR>", desc = "Rename File" },
@@ -43,7 +43,7 @@ return {
         },
       },
       setup = {
-        tsserver = function(_, opts)
+        ts_ls = function(_, opts)
           require("typescript").setup({ server = opts })
           return true
         end,
