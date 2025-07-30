@@ -60,3 +60,4 @@ vim.opt.timeoutlen = 300      -- Faster key sequence completion
 -- Split Behavior
 vim.opt.splitbelow = true     -- Open horizontal splits below
 vim.opt.splitright = true     -- Open vertical splits to the right
+vim.opt.splitkeep = "screen"  -- Keep the text on the same screen line
