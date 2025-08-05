@@ -50,6 +50,10 @@ vim.opt.undodir = vim.fn.stdpath("cache") .. "/undodir"
 vim.opt.ignorecase = true     -- Ignore case when searching
 vim.opt.smartcase = true      -- Override ignorecase if search contains capitals
 
+-- Grep (using ripgrep)
+vim.opt.grepprg = "rg --vimgrep --smart-case"
+vim.opt.grepformat = "%f:%l:%c:%m,%f:%l:%m"
+
 -- Completion
 vim.opt.completeopt = { "menuone", "noselect", "popup" } -- Better completion experience
 
@@ -57,7 +61,29 @@ vim.opt.completeopt = { "menuone", "noselect", "popup" } -- Better completion ex
 vim.opt.updatetime = 250      -- Faster completion and CursorHold
 vim.opt.timeoutlen = 300      -- Faster key sequence completion
 
+-- File Watching
+vim.opt.autoread = true       -- Reload files changed outside vim
+
 -- Split Behavior
 vim.opt.splitbelow = true     -- Open horizontal splits below
 vim.opt.splitright = true     -- Open vertical splits to the right
 vim.opt.splitkeep = "screen"  -- Keep the text on the same screen line
+
+-- =====================================================================================
+-- [[ Autocommands ]]
+-- =====================================================================================
+
+-- Auto-open quickfix after grep
+vim.api.nvim_create_autocmd("QuickFixCmdPost", {
+  pattern = "[^l]*",
+  callback = function()
+    vim.cmd("copen")
+  end,
+})
+
+-- =====================================================================================
+-- [[ Commands ]]
+-- =====================================================================================
+
+-- Make :grep always run silently
+vim.cmd("cnoreabbrev <expr> grep 'silent grep!'")
