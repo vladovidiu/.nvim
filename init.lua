@@ -87,3 +87,21 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
 
 -- Make :grep always run silently
 vim.cmd("cnoreabbrev <expr> grep 'silent grep!'")
+
+-- =====================================================================================
+-- [[ Keymaps ]]
+-- =====================================================================================
+
+-- File Explorer
+vim.keymap.set("n", "<leader>e", ":Lexplore<CR>", { desc = "Open file explorer" })
+
+-- =====================================================================================
+-- [[ Netrw Configuration ]]
+-- =====================================================================================
+
+vim.g.netrw_winsize = 20          -- Width of the explorer (20% of window)
+vim.g.netrw_banner = 0            -- Supress netrw banner
+vim.g.netrw_liststyle = 3         -- Tree style listing
+vim.g.netrw_browse_split = 4      -- Open files in previous window
+vim.g.netrw_altv = 1              -- Open splits to the right
+vim.g.netrw_keepdir = 0           -- Keep current directory and browsing directory synced
