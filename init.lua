@@ -95,6 +95,28 @@ vim.cmd("cnoreabbrev <expr> grep 'silent grep!'")
 -- File Explorer
 vim.keymap.set("n", "<leader>e", ":Lexplore<CR>", { desc = "Open file explorer" })
 
+-- FZF File Finding (minimal)
+vim.keymap.set("n", "<leader>ff", function()
+  vim.cmd('split | terminal fzf')
+  vim.cmd('resize 15')
+  
+  -- Auto-open selected file when fzf exits
+  vim.api.nvim_create_autocmd("TermClose", {
+    buffer = 0,
+    once = true,
+    callback = function()
+      local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+      for _, line in ipairs(lines) do
+        if line ~= '' and vim.fn.filereadable(line) == 1 then
+          vim.cmd('bdelete!')
+          vim.cmd('edit ' .. vim.fn.fnameescape(line))
+          break
+        end
+      end
+    end
+  })
+end, { desc = "Find files" })
+
 -- =====================================================================================
 -- [[ Netrw Configuration ]]
 -- =====================================================================================
