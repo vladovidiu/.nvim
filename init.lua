@@ -89,11 +89,24 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
 vim.cmd("cnoreabbrev <expr> grep 'silent grep!'")
 
 -- =====================================================================================
--- [[ Keymaps ]]
+-- [[ Plugins ]]
 -- =====================================================================================
 
--- File Explorer
-vim.keymap.set("n", "<leader>e", ":Lexplore<CR>", { desc = "Open file explorer" })
+-- Oil.nvim - edit filesystem like a buffer
+vim.pack.add(
+  { 'https://github.com/stevearc/oil.nvim' }
+)
+
+local oil = require("oil")
+oil.setup({
+  keymaps = {
+    ["q"] = "actions.close",
+  },
+})
+
+-- =====================================================================================
+-- [[ Keymaps ]]
+-- =====================================================================================
 
 -- FZF File Finding (minimal)
 vim.keymap.set("n", "<leader>ff", function()
@@ -116,14 +129,7 @@ vim.keymap.set("n", "<leader>ff", function()
     end
   })
 end, { desc = "Find files" })
-
--- =====================================================================================
--- [[ Netrw Configuration ]]
--- =====================================================================================
-
-vim.g.netrw_winsize = 20          -- Width of the explorer (20% of window)
-vim.g.netrw_banner = 0            -- Supress netrw banner
-vim.g.netrw_liststyle = 3         -- Tree style listing
-vim.g.netrw_browse_split = 4      -- Open files in previous window
-vim.g.netrw_altv = 1              -- Open splits to the right
-vim.g.netrw_keepdir = 0           -- Keep current directory and browsing directory synced
+--vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open file explorer" })
+vim.keymap.set("n", "<leader>e", function()
+  require("oil").toggle_float(".")
+end)
