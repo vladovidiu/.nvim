@@ -112,6 +112,7 @@ oil.setup({
 vim.keymap.set("n", "<leader>ff", function()
   vim.cmd('split | terminal fzf')
   vim.cmd('resize 15')
+  vim.cmd('startinsert')
   
   -- Auto-open selected file when fzf exits
   vim.api.nvim_create_autocmd("TermClose", {
