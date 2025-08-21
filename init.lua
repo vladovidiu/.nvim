@@ -104,15 +104,25 @@ vim.cmd("cnoreabbrev <expr> grep 'silent grep!'")
 -- [[ Plugins ]]
 -- =====================================================================================
 
--- Oil.nvim - edit filesystem like a buffer
-vim.pack.add(
-  { 'https://github.com/stevearc/oil.nvim' }
-)
+vim.pack.add({
+  { src = "https://github.com/stevearc/oil.nvim" },                                 -- Oil.nvim - edit filesystem like a buffer
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" }  -- Treesitter
+})
 
 local oil = require("oil")
 oil.setup({
   keymaps = {
     ["q"] = "actions.close",
+  },
+})
+
+-- Treesitter
+require("nvim-treesitter.configs").setup({
+  auto_install = true,
+  highlight = { enable = true },
+  indent = { enable = true },
+  ensure_installed = {
+    "lua",
   },
 })
 
