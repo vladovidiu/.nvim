@@ -29,11 +29,14 @@ vim.opt.relativenumber = true -- Show relative line numbers for easy jumping
 vim.opt.termguicolors = true  -- Enable 24-bit RGB colors
 vim.opt.signcolumn = "yes"    -- Always show sign column to prevent text shifting
 vim.opt.wrap = false          -- Don't wrap long lines
+vim.opt.cursorline = true     -- Highlight current line
+vim.opt.colorcolumn = "120"   -- Show column at 120 characters
 
 -- Indentation
 vim.opt.expandtab = true      -- Use spaces instead of tabs
 vim.opt.shiftwidth = 2        -- Size of an indent
 vim.opt.tabstop = 2           -- Number of spaces tabs count for
+vim.opt.softtabstop = 2       -- Number of spaces of soft tabs
 vim.opt.smartindent = true    -- Insert indents automatically
 
 -- System Integration
@@ -47,15 +50,15 @@ vim.opt.undofile = true          -- Enable persistent undo
 vim.opt.undodir = vim.fn.stdpath("cache") .. "/undodir"
 
 -- Search
-vim.opt.ignorecase = true     -- Ignore case when searching
-vim.opt.smartcase = true      -- Override ignorecase if search contains capitals
+vim.opt.ignorecase = true          -- Ignore case when searching
+vim.opt.smartcase = true           -- Override ignorecase if search contains capitals
 
 -- Grep (using ripgrep)
 vim.opt.grepprg = "rg --vimgrep --smart-case"
 vim.opt.grepformat = "%f:%l:%c:%m,%f:%l:%m"
 
 -- Completion
-vim.opt.completeopt = { "menuone", "noselect", "popup" } -- Better completion experience
+vim.opt.completeopt = { "menuone", "noselect", "popup", "noinsert" } -- Better completion experience
 
 -- Performance
 vim.opt.updatetime = 250      -- Faster completion and CursorHold
@@ -68,6 +71,15 @@ vim.opt.autoread = true       -- Reload files changed outside vim
 vim.opt.splitbelow = true     -- Open horizontal splits below
 vim.opt.splitright = true     -- Open vertical splits to the right
 vim.opt.splitkeep = "screen"  -- Keep the text on the same screen line
+
+-- Diffs
+vim.opt.diffopt:append("vertical")           -- Vertical diff splits
+vim.opt.diffopt:append("algorithm:patience") -- Better diff algorithm
+vim.opt.diffopt:append("linematch:60")       -- Better diff highlighting (smart line matching)
+
+-- Behaviour
+vim.opt.backspace = "indent,eol,start" -- Make backspace behave naturally
+vim.opt.path:append("**")              -- Search into subfolders with `gf`
 
 -- =====================================================================================
 -- [[ Autocommands ]]
@@ -130,7 +142,6 @@ vim.keymap.set("n", "<leader>ff", function()
     end
   })
 end, { desc = "Find files" })
---vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open file explorer" })
 vim.keymap.set("n", "<leader>e", function()
   require("oil").toggle_float(".")
 end)
