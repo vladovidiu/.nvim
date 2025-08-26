@@ -105,8 +105,9 @@ vim.cmd("cnoreabbrev <expr> grep 'silent grep!'")
 -- =====================================================================================
 
 vim.pack.add({
-  { src = "https://github.com/stevearc/oil.nvim" },                                 -- Oil.nvim - edit filesystem like a buffer
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" }  -- Treesitter
+  { src = "https://github.com/stevearc/oil.nvim" },                                    -- Oil.nvim - edit filesystem like a buffer
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },  -- Treesitter
+  { src = "https://github.com/rose-pine/neovim", name = "rose-pine" },                 -- Rose Pine theme
 })
 
 local oil = require("oil")
@@ -125,6 +126,13 @@ require("nvim-treesitter.configs").setup({
     "lua",
   },
 })
+
+require("rose-pine").setup({
+  styles = {
+    transparency = true,
+  },
+})
+vim.cmd("colorscheme rose-pine")
 
 -- =====================================================================================
 -- [[ Keymaps ]]
