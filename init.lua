@@ -132,7 +132,9 @@ require("rose-pine").setup({
     transparency = true,
   },
 })
+
 vim.cmd("colorscheme rose-pine")
+vim.cmd("hi ColorColumn guibg=#26233a")
 
 -- =====================================================================================
 -- [[ Keymaps ]]
